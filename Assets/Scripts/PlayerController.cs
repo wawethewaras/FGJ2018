@@ -3,42 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(AbilityController))]
 public class PlayerController : MonoBehaviour {
 
     public static PlayerController Instance;
+    public AbilityController myAbilityController;
 
     private Rigidbody2D myRigidbody;
 
     [SerializeField]
     private float moveSpeed = 10;
 
-    private Vector2 movementVector;
+    public Vector2 movementVector;
 
 
-    public GameObject coughParticle;
     void Start () {
         Instance = this;
         myRigidbody = GetComponent<Rigidbody2D>();
+        myAbilityController = GetComponent<AbilityController>();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         myRigidbody.velocity = movementVector.normalized * moveSpeed;
 
 
         if (Input.GetButtonDown("Jump")) {
-            Coughing();
+            myAbilityController.GetInfection().InfectionEffect(this);
         }
     }
 
-    private void Coughing() {
-        Debug.Log("Cough");
-        if (movementVector == Vector2.zero) {
-            return;
-        }
-        Rigidbody2D cough = Instantiate(coughParticle, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
-        cough.velocity = movementVector * 15;
-    }
+
 }
