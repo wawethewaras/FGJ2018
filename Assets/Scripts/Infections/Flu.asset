@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8f44cc8534da54da505d61d13fac4d, type: 3}
   m_Name: Flu
   m_EditorClassIdentifier: 
-  coughParticle: {fileID: 1797740987272478, guid: 82755dc891ec5874c9184c0eb732f297,
+  coughParticle: {fileID: 114578542803118044, guid: 82755dc891ec5874c9184c0eb732f297,
     type: 2}

@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool canShoot = true;
 
+
     void Start () {
         Instance = this;
         myRigidbody = GetComponent<Rigidbody2D>();

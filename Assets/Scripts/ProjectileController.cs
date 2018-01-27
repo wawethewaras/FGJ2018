@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour {
 
-    public int speed = 15;
+    public int speed = 50;
 
     public float lifeTime;
     void Start() {

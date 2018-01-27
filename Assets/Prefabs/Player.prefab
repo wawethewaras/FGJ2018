@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114782337911461754}
   - component: {fileID: 114139572775640110}
   - component: {fileID: 114385891416886164}
+  - component: {fileID: 95310130149336890}
+  - component: {fileID: 114881418187934900}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -80,7 +82,7 @@ BoxCollider2D:
   m_Offset: {x: 0.021674752, y: 0.3007536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.1}
+    pivot: {x: 0.5, y: 0.25}
     oldSize: {x: 3.1875, y: 6.875}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
@@ -90,6 +92,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1037629, y: 1.9765072}
   m_EdgeRadius: 0
+--- !u!95 &95310130149336890
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986358945745066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62480ce113003e04682cc13317940dce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114139572775640110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a1e444d0f505c44b777b432dc0b349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staticObject: 0
 --- !u!114 &114782337911461754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,8 +146,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAbilityController: {fileID: 0}
-  moveSpeed: 10
+  myAnimator: {fileID: 0}
+  moveSpeed: 20
   movementVector: {x: 0, y: 0}
+--- !u!114 &114881418187934900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986358945745066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ae4dd15b920334fb4dfabd4d4f8c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ratPoison: 0
+  keyCount: 0
 --- !u!212 &212590550842762530
 SpriteRenderer:
   m_ObjectHideFlags: 1

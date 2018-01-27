@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flu
   - Healthy
+  - Key
   layers:
   - Default
   - TransparentFX
