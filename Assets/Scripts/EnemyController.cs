@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CountPath))]
 
 public class EnemyController : MonoBehaviour {
+    public static int enemyCount = 0;
+    public static int infectedCount = 0;
+    public static event Action unitInfected;
 
     public UnitDataBase unitDataBase;
     public bool infected;
@@ -27,12 +31,12 @@ public class EnemyController : MonoBehaviour {
     private States currentState;
     void Start () {
         myRenderer = GetComponent<SpriteRenderer>();
-        int sprite = Random.Range(0, unitDataBase.unitSprites.Length);
+        int sprite = UnityEngine.Random.Range(0, unitDataBase.unitSprites.Length);
         myRenderer.sprite = unitDataBase.unitSprites[sprite];
         myCountPath = GetComponent<CountPath>();
         currentState = States.Walking;
-
-
+        enemyCount++;
+        UnitInfected();
     }
     Vector2 pos;
     // Update is called once per frame
@@ -58,7 +62,7 @@ public class EnemyController : MonoBehaviour {
     }
 
     private IEnumerator moveWayPoints() {
-        Vector2 pos = new Vector2(waypoints[currentWaypoint].position.x + Random.Range(-5, 5), waypoints[currentWaypoint].position.y + Random.Range(-5, 5));
+        Vector2 pos = new Vector2(waypoints[currentWaypoint].position.x + UnityEngine.Random.Range(-5, 5), waypoints[currentWaypoint].position.y + UnityEngine.Random.Range(-5, 5));
 
         while ((Vector2)transform.position != pos) {
             myCountPath.FindPath(transform, pos);
@@ -66,9 +70,9 @@ public class EnemyController : MonoBehaviour {
             yield return null;
 
         }
-        currentWaypoint = Random.Range(0, waypoints.Length);
+        currentWaypoint = UnityEngine.Random.Range(0, waypoints.Length);
 
-        float waitTime = Random.Range(0, 3);
+        float waitTime = UnityEngine.Random.Range(0, 3);
         yield return new WaitForSeconds(waitTime);
         StartCoroutine(moveWayPoints());
 
@@ -76,9 +80,26 @@ public class EnemyController : MonoBehaviour {
     }
 
     public void GetInfected() {
-        print("Infected");
         infected = true;
+        infectedCount++;
+        UnitInfected();
+
         myRenderer.color = Color.green;
         infectingLayer.SetActive(true);
+    }
+
+    public void GetCured()
+    {
+        infected = false;
+        infectedCount--;
+        UnitInfected();
+        myRenderer.color = Color.white;
+        infectingLayer.SetActive(false);
+    }
+
+    public void UnitInfected() {
+        if (unitInfected != null) {
+            unitInfected();
+        }
     }
 }
