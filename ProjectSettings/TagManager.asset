@@ -47,12 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Items
+    uniqueID: 1141627849
+    locked: 0
+  - name: School
+    uniqueID: 3030629373
+    locked: 0
   - name: Walls
     uniqueID: 2022192947
     locked: 0
   - name: Peeeeepol
     uniqueID: 3676813857
-    locked: 0
-  - name: Items
-    uniqueID: 1141627849
     locked: 0
