@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
+    public UnitDataBase unitDataBase;
     public bool infected;
     private SpriteRenderer myRenderer;
     private Rigidbody2D myRigidbody;
@@ -18,16 +19,34 @@ public class EnemyController : MonoBehaviour {
 
     public GameObject infectingLayer;
 
+    public enum States {
+        Idle,
+        Walking,
+        Coughing
+    }
+    private States currentState;
     void Start () {
         myRenderer = GetComponent<SpriteRenderer>();
+        int sprite = Random.Range(0, unitDataBase.unitSprites.Length);
+        myRenderer.sprite = unitDataBase.unitSprites[sprite];
         myCountPath = GetComponent<CountPath>();
+        currentState = States.Walking;
 
-        StartCoroutine(moveWayPoints());
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+    Vector2 pos;
+    // Update is called once per frame
+    void Update () {
+        switch (currentState) {
+            case States.Idle:
+                break;
+
+            case States.Walking:
+                StartCoroutine(moveWayPoints());
+                break;
+            case States.Coughing:
+                break;
+        }
 
     }
 
@@ -39,8 +58,11 @@ public class EnemyController : MonoBehaviour {
     }
 
     private IEnumerator moveWayPoints() {
-        while((Vector2)transform.position != (Vector2)waypoints[currentWaypoint].position) {
-            myCountPath.FindPath(transform, waypoints[currentWaypoint].position);
+        Vector2 pos = new Vector2(waypoints[currentWaypoint].position.x + Random.Range(-5, 5), waypoints[currentWaypoint].position.y + Random.Range(-5, 5));
+
+        while ((Vector2)transform.position != pos) {
+            myCountPath.FindPath(transform, pos);
+
             yield return null;
 
         }

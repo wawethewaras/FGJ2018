@@ -119,12 +119,6 @@ public class CountPath : MonoBehaviour, pathfinding.Pathfinding
                     }
                     
                 }
-                Vector2 target_pos = pathArray[i];
-                Vector2 my_pos =  transform.position;
-                target_pos.x = target_pos.x - my_pos.x;
-                target_pos.y = target_pos.y - my_pos.y;
-                float angle = Mathf.Atan2(target_pos.y, target_pos.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
                 startPos.transform.position = Vector2.MoveTowards(startPos.transform.position, pathArray[i], Time.deltaTime * movespeed);
                 //Vector2 direction = (pathArray[i] - startPos.transform.position).normalized * 100;
@@ -134,12 +128,6 @@ public class CountPath : MonoBehaviour, pathfinding.Pathfinding
             }
         }
         while (true) {
-            Vector2 target_pos = endPos;
-            Vector2 my_pos = transform.position;
-            target_pos.x = target_pos.x - my_pos.x;
-            target_pos.y = target_pos.y - my_pos.y;
-            float angle = Mathf.Atan2(target_pos.y, target_pos.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
             startPos.transform.position = Vector2.MoveTowards(startPos.transform.position, endPos, Time.deltaTime * movespeed);
             //Vector2 direction = (endPosition - startPos.transform.position).normalized * 100; ;
