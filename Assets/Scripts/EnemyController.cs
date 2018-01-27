@@ -15,17 +15,18 @@ public class EnemyController : MonoBehaviour {
     public bool infected;
     public Infection myInfection;
 
-    private SpriteRenderer myRenderer;
-    private Rigidbody2D myRigidbody;
-    private CountPath myCountPath;
+    private bool isDead = false;
+    protected SpriteRenderer myRenderer;
+    protected Rigidbody2D myRigidbody;
+    protected CountPath myCountPath;
 
     public Transform[] waypoints;
     private int currentWaypoint;
     public float moveSpeed;
 
     public GameObject infectingLayer;
-    int sprite;
-    public enum States {
+    public int sprite;
+    private enum States {
         Idle,
         Walking,
         Coughing,
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour {
     public UnitType unitType;
     private States currentState;
 
-    void Start () {
+    protected virtual void Start () {
         myRenderer = GetComponent<SpriteRenderer>();
         sprite = UnityEngine.Random.Range(0, unitDataBase.unitSprites.Length);
         GetSprite();
@@ -65,8 +66,13 @@ public class EnemyController : MonoBehaviour {
             case States.Coughing:
                 break;
             case States.Dead:
-                myRenderer.sprite = unitDataBase.unitDeadSprites[sprite];
-                myCountPath.StopMovement();
+                if (!isDead) {
+                    myRenderer.sprite = unitDataBase.unitDeadSprites[sprite];
+                    myCountPath.StopMovement();
+                    GameController.Instance.deadEnemies.Add(new DeadEnemy(this));
+                    isDead = true;
+                }
+
                 break;
         }
 
@@ -142,6 +148,9 @@ public class EnemyController : MonoBehaviour {
             case UnitType.Mask:
                 myRenderer.sprite = unitDataBase.unitMaskSprites[sprite];
                 break;
+            case UnitType.Gas:
+                myRenderer.sprite = unitDataBase.unitGasMaskSprites[sprite];
+                break;
 
         }
     }
@@ -154,7 +163,7 @@ public class EnemyController : MonoBehaviour {
     }
 
     public IEnumerator Die() {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         if (infected) {
             StopCoroutine(moving);
             currentState = States.Dead;
