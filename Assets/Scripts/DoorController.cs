@@ -17,12 +17,14 @@ public class DoorController : MonoBehaviour {
     public void OpenDoor() {
         locked = false;
         myAnimator.SetBool("Locked", false);
+        GetComponent<SpriteRenderer>().enabled = false;
+
     }
     public void CloseDoor()
     {
         locked = true;
         myAnimator.SetBool("Locked", true);
-
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 
     void OnTriggerEnter2D(Collider2D other) {

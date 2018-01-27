@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
+  infection: {fileID: 11400000, guid: db1edf9eea870b34e882dc89a12b7163, type: 2}
   lifeTime: 0.15
 --- !u!212 &212446696069495418
 SpriteRenderer:

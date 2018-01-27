@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour {
 
     public int speed = 50;
+    public Infection infection;
 
     public float lifeTime;
     void Start() {

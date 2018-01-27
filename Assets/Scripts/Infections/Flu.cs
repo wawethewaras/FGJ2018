@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 
@@ -9,6 +8,9 @@ using UnityEngine;
 public class Flu : Infection {
     public ProjectileController coughParticle;
 
+    public override void OnEnable() {
+        infectionID = 0;
+    }
     public override void InfectionEffect(PlayerController player)
     {
         Debug.Log("Cough");
