@@ -1,55 +1,62 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CountPath))]
+
 public class EnemyController : MonoBehaviour {
 
-    private bool infected;
+    public bool infected;
     private SpriteRenderer myRenderer;
     private Rigidbody2D myRigidbody;
+    private CountPath myCountPath;
 
     public Transform[] waypoints;
     private int currentWaypoint;
     public float moveSpeed;
 
+    public GameObject infectingLayer;
+
     void Start () {
         myRenderer = GetComponent<SpriteRenderer>();
+        myCountPath = GetComponent<CountPath>();
+
         StartCoroutine(moveWayPoints());
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+
+    }
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Flu" && !infected) {
-            print("Infected");
-            infected = true;
-            myRenderer.color = Color.green;
+            GetInfected();
             Destroy(other.gameObject);
         }
     }
 
     private IEnumerator moveWayPoints() {
-        print(currentWaypoint);
         while((Vector2)transform.position != (Vector2)waypoints[currentWaypoint].position) {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypoint].position, Time.deltaTime * moveSpeed);
+            myCountPath.FindPath(transform, waypoints[currentWaypoint].position);
             yield return null;
 
         }
-        currentWaypoint++;
-        if (currentWaypoint >= waypoints.Length) {
-            currentWaypoint = 0;
-            StartCoroutine(moveWayPoints());
+        currentWaypoint = Random.Range(0, waypoints.Length);
 
-        }
-        else {
-            StartCoroutine(moveWayPoints());
+        float waitTime = Random.Range(0, 3);
+        yield return new WaitForSeconds(waitTime);
+        StartCoroutine(moveWayPoints());
 
-        }
 
+    }
+
+    public void GetInfected() {
+        print("Infected");
+        infected = true;
+        myRenderer.color = Color.green;
+        infectingLayer.SetActive(true);
     }
 }

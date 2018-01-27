@@ -10,9 +10,10 @@ public class InfectingControllerEnemy : MonoBehaviour {
 	}
 
     void OnTriggerStay2D(Collider2D other) {
-        if (other.tag != "Healthy") {
-            print("Infect");
-            other.tag = "";
+        EnemyController enemy;
+        if ((enemy = other.GetComponent<EnemyController>()) && !enemy.infected) {
+            enemy.GetInfected();
+
         }
     }
 
