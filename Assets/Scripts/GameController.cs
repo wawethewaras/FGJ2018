@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour {
     public List<DeadEnemy> deadEnemies = new List<DeadEnemy>();
     public List<GameObject> bodyDropOff = new List<GameObject>();
 
+
+    public GameObject theCleaners;
+
+    public DoorController door;
     void Awake() {
         Instance = this;
     }
@@ -19,8 +23,11 @@ public class GameController : MonoBehaviour {
     }
 
     public void YardInfected() {
-        if (EnemyController.infectedCount > fieldInfectd) {
+
+        if (EnemyController.infectedCount >= fieldInfectd) {
             print("Doors open!");
+            door.OpenDoor();
+            theCleaners.SetActive(true);
         }
     }
 

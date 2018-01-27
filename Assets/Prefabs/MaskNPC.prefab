@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03c15edf8d8f9e49be2512ecba173fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myEnemy: {fileID: 0}
 --- !u!114 &114272373971912944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,11 +173,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitDataBase: {fileID: 11400000, guid: b0e92fd5dd1c86c43b1ec55924197972, type: 2}
   infected: 0
+  myInfection: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 10
   infectingLayer: {fileID: 1169651690178094}
+  sprite: 0
   unitType: 1
 --- !u!114 &114519756611458672
 MonoBehaviour:

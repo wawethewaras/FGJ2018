@@ -51,7 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3d7587db35e824fa2d06bdd9333c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldInfectd: 0
+  fieldInfectd: 16
   deadEnemies: []
   bodyDropOff:
   - {fileID: 0}
+  theCleaners: {fileID: 0}
+  door: {fileID: 0}
