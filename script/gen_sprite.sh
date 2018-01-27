@@ -40,11 +40,33 @@ single_person() {
   done
 }
 
+two_persons() {
+  name=$1
+  j=96 # magic
+
+  for color_a in $colors
+  do
+    j=$((j+1))
+    k=96 # magic
+    sed -i "0,/fill:#[0-9a-f]\+;/{s/fill:#[0-9a-f]\+;/fill:#$color_a;/}" "$name.svg"
+    for color_b in $colors
+    do
+      k=$((k+1))
+      filename=$(/usr/bin/printf "$name-\x$(printf %x $j)-\x$(printf %x $k).png")
+      sed -i "72,/fill:#[0-9a-f]\+;/{s/fill:#[0-9a-f]\+;/fill:#$color_b;/}" "$name.svg"
+      generate_svg "$name.svg" $filename
+    done
+  done
+}
+
 simple_sprite "faucet"
 simple_sprite "alien"
 simple_sprite "doctor"
 simple_sprite "cough"
+simple_sprite "door"
+simple_sprite "opendoor"
 single_person "npc"
 single_person "dead"
 single_person "mask"
 single_person "gasmask"
+two_persons "grabbingdead"

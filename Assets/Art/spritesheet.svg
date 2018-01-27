@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="756.94788"
-     inkscape:cy="609.10132"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="255.58852"
+     inkscape:cy="410.61095"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -679,5 +679,68 @@
            height="91.428574"
            x="355.71429"
            y="135.93364" /></flowRegion><flowPara
-         id="flowPara4823">cough</flowPara></flowRoot>  </g>
+         id="flowPara4823">cough</flowPara></flowRoot>    <rect
+       style="fill:#804d00;fill-opacity:1;stroke:#000000;stroke-width:3.00000024;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5537"
+       width="71"
+       height="143"
+       x="310.5"
+       y="415.86221" />
+    <circle
+       style="fill:#b88100;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path5539"
+       cx="368.35715"
+       cy="479.21936"
+       r="7.5" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 367.5583,500.20026 -3.42186,7.09085 8.55462,0 -3.42184,-7.09085 c 0,0 4.98135,-5.94102 -0.85546,-5.90904 -5.22387,0.0286 -0.85546,5.90904 -0.85546,5.90904 z"
+       id="path5541"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccsc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5543"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+         id="flowRegion5545"><rect
+           id="rect5547"
+           width="100.00511"
+           height="52.527935"
+           x="392.94934"
+           y="457.38235" /></flowRegion><flowPara
+         id="flowPara5549">door</flowPara></flowRoot>    <rect
+       style="fill:#804d00;fill-opacity:1;stroke:#000000;stroke-width:4.55190611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5537-3"
+       width="78.824394"
+       height="143"
+       x="719.099"
+       y="1288.3041"
+       transform="matrix(0.43436622,-0.90073636,0,1,0,0)" />
+    <ellipse
+       style="fill:#b88100;fill-opacity:1;stroke:#000000;stroke-width:4.55190516;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path5539-6"
+       cx="783.33215"
+       cy="1351.6613"
+       rx="8.3265209"
+       ry="7.5"
+       transform="matrix(0.43436622,-0.90073636,0,1,0,0)" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 339.86781,667.8652 -1.65014,10.51271 4.12533,-8.55462 -1.65013,-3.66901 c 0,0 2.40218,-10.92237 -0.41253,-5.05358 -2.51913,5.25247 -0.41253,6.7645 -0.41253,6.7645 z"
+       id="path5541-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccsc" />
+    <flowRoot
+       transform="translate(-22.589264,147.807)"
+       xml:space="preserve"
+       id="flowRoot5543-5"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+         id="flowRegion5545-3"><rect
+           id="rect5547-5"
+           width="193.94934"
+           height="112.12695"
+           x="392.94934"
+           y="457.38235" /></flowRegion><flowPara
+         id="flowPara5549-6">open door </flowPara><flowPara
+         id="flowPara5584" /></flowRoot>  </g>
 </svg>
