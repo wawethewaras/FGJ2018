@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="255.58852"
-     inkscape:cy="410.61095"
+     inkscape:cx="256.38676"
+     inkscape:cy="780.80985"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -111,13 +111,6 @@
        x="240.68079"
        y="251.72644"
        transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)" />
-    <ellipse
-       style="fill:#ffccaa;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path3355-5"
-       cx="173.68214"
-       cy="290.06293"
-       rx="23.499996"
-       ry="23.499886" />
     <rect
        style="fill:#3366cc;stroke:#000000;stroke-width:2.99145246;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3357-3-2"
@@ -742,5 +735,46 @@
            x="392.94934"
            y="457.38235" /></flowRegion><flowPara
          id="flowPara5549-6">open door </flowPara><flowPara
-         id="flowPara5584" /></flowRoot>  </g>
+         id="flowPara5584" /></flowRoot>    <ellipse
+       style="fill:#ffccaa;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3355-3-3"
+       cx="173"
+       cy="285.06326"
+       rx="23.499996"
+       ry="23.499886" />
+    <path
+       style="fill:#3c5c24;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 164,310.06316 -11,-24 c 0,0 4.03242,-20.41421 19.82143,-20.82143 C 189.59824,264.80903 193,286.06316 193,286.06316 l -11,24 z"
+       id="path4715-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsccc" />
+    <ellipse
+       style="fill:#3c5c24;stroke:#000000;stroke-width:0.99999994;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4683-75"
+       cx="173.00002"
+       cy="309.0632"
+       rx="9.5"
+       ry="5.5" />
+    <ellipse
+       style="fill:#3c5c24;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4683-7-3"
+       cx="172.73215"
+       cy="309.20602"
+       rx="4.5"
+       ry="2.5" />
+    <ellipse
+       style="fill:#90846c;stroke:#000000;stroke-width:0.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4717-5"
+       cx="164.5"
+       cy="281.06314"
+       rx="7"
+       ry="8.5" />
+    <ellipse
+       style="fill:#90846c;stroke:#000000;stroke-width:0.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4717-8-6"
+       cx="181.5"
+       cy="281.06314"
+       rx="7"
+       ry="8.5" />
+  </g>
 </svg>
