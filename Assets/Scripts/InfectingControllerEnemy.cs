@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class InfectingControllerEnemy : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public EnemyController myEnemy;
 
-    void OnTriggerStay2D(Collider2D other) {
+    void Start() {
+        myEnemy = GetComponentInParent<EnemyController>();
+    }
+
+	void OnTriggerStay2D(Collider2D other) {
         EnemyController enemy;
         if ((enemy = other.GetComponent<EnemyController>()) && !enemy.infected) {
-            enemy.GetInfected();
+            enemy.GetInfected(myEnemy.myInfection);
 
         }
     }

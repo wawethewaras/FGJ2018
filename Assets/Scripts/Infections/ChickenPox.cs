@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-[CreateAssetMenu(menuName = "Infection/Flu")]
-public class Flu : Infection {
+public class ChickenPox : Infection {
     public ProjectileController coughParticle;
 
-    public override void OnEnable() {
+    public override void OnEnable()
+    {
         infectionID = 0;
     }
     public override void InfectionEffect(PlayerController player)

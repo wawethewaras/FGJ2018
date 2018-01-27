@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour {
 
     public UnitDataBase unitDataBase;
     public bool infected;
+    public Infection myInfection;
+
     private SpriteRenderer myRenderer;
     private Rigidbody2D myRigidbody;
     private CountPath myCountPath;
@@ -29,11 +31,19 @@ public class EnemyController : MonoBehaviour {
         Coughing,
         Dead
     }
+    public enum UnitType
+    {
+        Standard,
+        Mask,
+        Gas
+    }
+    public UnitType unitType;
     private States currentState;
+
     void Start () {
         myRenderer = GetComponent<SpriteRenderer>();
         sprite = UnityEngine.Random.Range(0, unitDataBase.unitSprites.Length);
-        myRenderer.sprite = unitDataBase.unitSprites[sprite];
+        GetSprite();
         myCountPath = GetComponent<CountPath>();
         currentState = States.Walking;
         enemyCount++;
@@ -63,10 +73,12 @@ public class EnemyController : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Flu" && !infected) {
-            GetInfected();
+        ProjectileController influence;
+        if ((influence = other.GetComponent<ProjectileController>()) && !infected) {
+            GetInfected(influence.infection);
             Destroy(other.gameObject);
         }
+
     }
     private IEnumerator moveWayPoints() {
         Vector2 pos = new Vector2(waypoints[currentWaypoint].position.x + UnityEngine.Random.Range(-5, 5), waypoints[currentWaypoint].position.y + UnityEngine.Random.Range(-5, 5));
@@ -86,13 +98,30 @@ public class EnemyController : MonoBehaviour {
 
     }
 
-    public void GetInfected() {
-        infected = true;
-        infectedCount++;
-        UnitInfected();
-        StartCoroutine(Die());
-        myRenderer.color = Color.green;
-        infectingLayer.SetActive(true);
+    public void GetInfected(Infection infection) {
+        if (infection.infectionID == 0) {
+            if (unitType == UnitType.Standard) {
+                infected = true;
+                infectedCount++;
+                myInfection = infection;
+                UnitInfected();
+                StartCoroutine(Die());
+                myRenderer.color = Color.green;
+                infectingLayer.SetActive(true);
+            }
+        }
+        if (infection.infectionID == 1) {
+            if (unitType == UnitType.Mask) {
+                infected = true;
+                infectedCount++;
+                myInfection = infection;
+                UnitInfected();
+                StartCoroutine(Die());
+                myRenderer.color = Color.green;
+                infectingLayer.SetActive(true);
+            }
+        }
+
     }
 
     public void GetCured()
@@ -103,6 +132,20 @@ public class EnemyController : MonoBehaviour {
         myRenderer.color = Color.white;
         infectingLayer.SetActive(false);
     }
+    public void GetSprite()
+    {
+        switch (unitType){
+            case UnitType.Standard:
+                myRenderer.sprite = unitDataBase.unitSprites[sprite];
+
+                break;
+            case UnitType.Mask:
+                myRenderer.sprite = unitDataBase.unitMaskSprites[sprite];
+                break;
+
+        }
+    }
+
 
     public void UnitInfected() {
         if (unitInfected != null) {

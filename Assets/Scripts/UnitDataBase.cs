@@ -7,5 +7,6 @@ public class UnitDataBase : ScriptableObject {
 
     public Sprite[] unitSprites;
     public Sprite[] unitDeadSprites;
+    public Sprite[] unitMaskSprites;
 
 }
