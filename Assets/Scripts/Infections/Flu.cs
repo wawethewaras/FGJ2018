@@ -12,11 +12,8 @@ public class Flu : Infection {
     public override void InfectionEffect(PlayerController player)
     {
         Debug.Log("Cough");
-        if (player.movementVector == Vector2.zero)
-        {
-            return;
-        }
         Rigidbody2D cough = Instantiate(coughParticle, player.transform.position, player.transform.rotation).GetComponent<Rigidbody2D>();
-        cough.velocity = player.movementVector * 15;
+        Vector2 direction = new Vector2(player.myAnimator.GetFloat("input_x"), player.myAnimator.GetFloat("input_y"));
+        cough.velocity = direction * 15;
     }
 }
