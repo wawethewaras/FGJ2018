@@ -51,12 +51,12 @@ two_persons() {
   do
     j=$((j+1))
     k=96 # magic
-    sed -i "0,/fill:#[0-9a-f]\+;/{s/fill:#[0-9a-f]\+;/fill:#$color_a;/}" "$name.svg"
+    sed -i "57,/fill:#[0-9a-f]\+;/{s/fill:#[0-9a-f]\+;/fill:#$color_a;/}" "$name.svg"
     for color_b in $colors
     do
       k=$((k+1))
       filename=$(/usr/bin/printf "$name-\x$(printf %x $j)-\x$(printf %x $k).png")
-      sed -i "72,/fill:#[0-9a-f]\+;/{s/fill:#[0-9a-f]\+;/fill:#$color_b;/}" "$name.svg"
+      sed -i "65,/fill:#[0-9a-f]\+;/{s/fill:#[0-9a-f]\+;/fill:#$color_b;/}" "$name.svg"
       generate_svg "$name.svg" $filename
     done
   done
