@@ -22,16 +22,17 @@ public class EnemyController : MonoBehaviour {
     public float moveSpeed;
 
     public GameObject infectingLayer;
-
+    int sprite;
     public enum States {
         Idle,
         Walking,
-        Coughing
+        Coughing,
+        Dead
     }
     private States currentState;
     void Start () {
         myRenderer = GetComponent<SpriteRenderer>();
-        int sprite = UnityEngine.Random.Range(0, unitDataBase.unitSprites.Length);
+        sprite = UnityEngine.Random.Range(0, unitDataBase.unitSprites.Length);
         myRenderer.sprite = unitDataBase.unitSprites[sprite];
         myCountPath = GetComponent<CountPath>();
         currentState = States.Walking;
@@ -39,16 +40,23 @@ public class EnemyController : MonoBehaviour {
         UnitInfected();
     }
     Vector2 pos;
-    // Update is called once per frame
+
+    IEnumerator moving;
+
     void Update () {
         switch (currentState) {
             case States.Idle:
                 break;
 
             case States.Walking:
-                StartCoroutine(moveWayPoints());
+                moving = moveWayPoints();
+                StartCoroutine(moving);
                 break;
             case States.Coughing:
+                break;
+            case States.Dead:
+                myRenderer.sprite = unitDataBase.unitDeadSprites[sprite];
+                myCountPath.StopMovement();
                 break;
         }
 
@@ -60,7 +68,6 @@ public class EnemyController : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
-
     private IEnumerator moveWayPoints() {
         Vector2 pos = new Vector2(waypoints[currentWaypoint].position.x + UnityEngine.Random.Range(-5, 5), waypoints[currentWaypoint].position.y + UnityEngine.Random.Range(-5, 5));
 
@@ -83,7 +90,7 @@ public class EnemyController : MonoBehaviour {
         infected = true;
         infectedCount++;
         UnitInfected();
-
+        StartCoroutine(Die());
         myRenderer.color = Color.green;
         infectingLayer.SetActive(true);
     }
@@ -100,6 +107,14 @@ public class EnemyController : MonoBehaviour {
     public void UnitInfected() {
         if (unitInfected != null) {
             unitInfected();
+        }
+    }
+
+    public IEnumerator Die() {
+        yield return new WaitForSeconds(4f);
+        if (infected) {
+            StopCoroutine(moving);
+            currentState = States.Dead;
         }
     }
 }
