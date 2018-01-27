@@ -5,8 +5,10 @@ colors='ffffff bfbfbf 808080 404040 000000 6699ff 3366cc 003399 99cc33 00cc00 66
 generate_svg()
 {
   infile=$1
-  outfile=$2
-  gimp -idf --batch-interpreter=python-fu-eval -b - 2> /dev/null << EOF
+  outfile="../Assets/Art/$2"
+  if [ ! -e $outfile ]
+  then
+    gimp -idf --batch-interpreter=python-fu-eval -b - 2> /dev/null << EOF
 import gimpfu
 
 def svgtopng(infile,outfile):
@@ -16,10 +18,11 @@ def svgtopng(infile,outfile):
   pdb.gimp_file_save(img, layer, outfile, '?')
   pdb.gimp_image_delete(img)
 
-svgtopng('${infile}','../Assets/Art/${outfile}')
+svgtopng('${infile}','${outfile}')
 
 pdb.gimp_quit(1)
 EOF
+  fi
 }
 
 simple_sprite() {
@@ -65,6 +68,16 @@ simple_sprite "doctor"
 simple_sprite "cough"
 simple_sprite "door"
 simple_sprite "opendoor"
+simple_sprite "key"
+simple_sprite "table"
+simple_sprite "dish0"
+simple_sprite "dish1"
+simple_sprite "dish2"
+simple_sprite "dish3"
+simple_sprite "dish4"
+simple_sprite "dish5"
+simple_sprite "fork"
+simple_sprite "knife"
 single_person "npc"
 single_person "dead"
 single_person "mask"
