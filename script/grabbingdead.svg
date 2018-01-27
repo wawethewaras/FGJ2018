@@ -63,7 +63,7 @@
        y="886.19421"
        transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)" />
     <rect
-       style="fill:#3366cc;stroke:#000000;stroke-width:2.99145246;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#cc0000;stroke:#000000;stroke-width:2.99145246;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3357-3-2"
        width="32.008549"
        height="77.008545"
@@ -71,7 +71,7 @@
        y="-9.6678686"
        transform="matrix(0.08682682,0.99622342,-0.99622342,0.08682682,0,0)" />
     <ellipse
-       style="fill:#cc0000;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffccaa;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3355-6-9"
        cx="998.55524"
        cy="-104.62576"
