@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SinkController : MonoBehaviour {
 
+    public bool activated = true;
+
     void OnTriggerStay2D(Collider2D other)
     {
         EnemyController enemy;
-        if ((enemy = other.GetComponent<EnemyController>()) && enemy.infected)
+        if (activated && (enemy = other.GetComponent<EnemyController>()) && enemy.infected)
         {
             enemy.GetCured();
 
