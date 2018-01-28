@@ -10,6 +10,8 @@ public class InventoryController : MonoBehaviour {
 
     private AudioSource player;
     public AudioClip soundOnPickUp;
+    public AudioClip soundWhenPoisoning;
+
     void Start () {
         player = GetComponent<AudioSource>();
 
@@ -25,6 +27,7 @@ public class InventoryController : MonoBehaviour {
                 foodInfection.poisonedFood = true;
                 foodInfection.myRenderer.color = Color.green;
                 UIController.Instance.ChangeUITutorial("");
+                player.PlayOneShot(soundWhenPoisoning);
 
             }
         }

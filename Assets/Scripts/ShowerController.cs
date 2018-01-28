@@ -8,10 +8,13 @@ public class ShowerController : MonoBehaviour
 
     public SinkController[] sinks;
 
+    private AudioSource audioSource;
+    public AudioClip soundOnPickUp;
+
     private bool SinksDisabled;
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class ShowerController : MonoBehaviour
 
     void DisableSinks()
     {
+        audioSource.PlayOneShot(soundOnPickUp);
         foreach (SinkController sink in sinks)
         {
             sink.WaterParticles.SetActive(false);

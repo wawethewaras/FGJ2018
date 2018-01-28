@@ -8603,6 +8603,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 8c9b89e2b789d2249b2473a518174ae8,
         type: 3}
+    - target: {fileID: 114400299724042388, guid: 29aef3106e0671b4785cb9685b12c7be,
+        type: 2}
+      propertyPath: soundOnPickUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c9036c0a6fa95a43966ded2104c4897, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29aef3106e0671b4785cb9685b12c7be, type: 2}
   m_IsPrefabParent: 0
@@ -12143,7 +12148,12 @@ Prefab:
         type: 2}
       propertyPath: soundOnPickUp
       value: 
-      objectReference: {fileID: 8300000, guid: 87bf477fe6274af4fb314afcfa2b0955, type: 3}
+      objectReference: {fileID: 8300000, guid: d0cfa9a23cbdf4042aad43f44a8e8449, type: 3}
+    - target: {fileID: 114881418187934900, guid: e72b261ba3c30ea4fb4c80f9bf9a0fe8,
+        type: 2}
+      propertyPath: soundWhenPoisoning
+      value: 
+      objectReference: {fileID: 8300000, guid: 2899d11456c03a9468a0bff8c97bc2e5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e72b261ba3c30ea4fb4c80f9bf9a0fe8, type: 2}
   m_IsPrefabParent: 0
