@@ -64,6 +64,7 @@ two_persons() {
 
 simple_sprite "grass"
 simple_sprite "tile"
+simple_sprite "floor"
 simple_sprite "wall"
 simple_sprite "alien"
 simple_sprite "doctor"
