@@ -4,9 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
+    public static UIController Instance;
     public Text uiText;
+    public Text tutorialText;
+
     public GameObject winScreen;
 
+    public GameObject ratPoison;
+    public GameObject key;
+
+
+    void Awake() {
+        Instance = this;
+    }
     void Start () {
         EnemyController.unitInfected += UpdateUI;
     }
@@ -18,4 +28,20 @@ public class UIController : MonoBehaviour {
             Time.timeScale = 0;
         }
     }
+
+    public void ChangeUITutorial(string text) {
+        tutorialText.text = text;
+    }
+    public void ChangeUITutorialForDuration(string text)
+    {
+        StartCoroutine(TextForDuration(text));
+    }
+    public IEnumerator TextForDuration(string text) {
+        tutorialText.text = text;
+        yield return new WaitForSeconds(2f);
+        tutorialText.text = "";
+
+    }
+
+
 }

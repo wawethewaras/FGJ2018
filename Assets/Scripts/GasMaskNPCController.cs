@@ -8,18 +8,24 @@ public class GasMaskNPCController : EnemyController
     private enum GasStates {
         LookingforCorpse,
         CarringCorpse,
+        Eat
     }
     private GasStates currentGasState;
     private EnemyController currentEnemy;
     private GameObject bodyDropOff;
+    private GameObject food;
 
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    public override void Update () {
         switch (currentGasState) {
             case GasStates.LookingforCorpse:
                 if (currentEnemy == null) {
                     currentEnemy = GameController.Instance.GetRandomDead();
+                }
+                if (GameController.CorpseCount < 1)
+                {
+                    currentGasState = GasStates.Eat;
                 }
                 if (currentEnemy != null)
                 {
@@ -34,6 +40,17 @@ public class GasMaskNPCController : EnemyController
                 }
                 myCountPath.FindPath(transform, bodyDropOff.transform.position);
 
+                break;
+            case GasStates.Eat:
+                if (food == null)
+                {
+                    food = GameController.Instance.GetFood();
+                }
+                myCountPath.FindPath(transform, food.transform.position);
+                if (GameController.CorpseCount > 3)
+                {
+                    currentGasState = GasStates.LookingforCorpse;
+                }
                 break;
         }
 	}
@@ -51,6 +68,7 @@ public class GasMaskNPCController : EnemyController
         else if (other.GetComponent<BodyDropOff>())
         {
             bodyDropOff = null;
+            GameController.CorpseCount--;
             currentGasState = GasStates.LookingforCorpse;
             GetSprite();
 

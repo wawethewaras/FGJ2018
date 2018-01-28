@@ -5,11 +5,14 @@ using System;
 
 public class GameController : MonoBehaviour {
 
+    public static int CorpseCount = 0;
+
     public static GameController Instance;
     public int fieldInfectd;
 
     public List<DeadEnemy> deadEnemies = new List<DeadEnemy>();
     public List<GameObject> bodyDropOff = new List<GameObject>();
+    public List<GameObject> foods = new List<GameObject>();
 
 
     public GameObject theCleaners;
@@ -25,7 +28,6 @@ public class GameController : MonoBehaviour {
     public void YardInfected() {
 
         if (EnemyController.infectedCount >= fieldInfectd) {
-            print("Doors open!");
             door.OpenDoor();
             theCleaners.SetActive(true);
         }
@@ -62,6 +64,15 @@ public class GameController : MonoBehaviour {
         }
         int random = UnityEngine.Random.Range(0, bodyDropOff.Count);
         return bodyDropOff[random];
+    }
+    public GameObject GetFood()
+    {
+        if (foods.Count < 1)
+        {
+            return null;
+        }
+        int random = UnityEngine.Random.Range(0, foods.Count);
+        return foods[random];
     }
 }
 [Serializable]

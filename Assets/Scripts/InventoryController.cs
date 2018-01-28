@@ -15,13 +15,28 @@ public class InventoryController : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (ratPoison && other.tag == "Food")
+        FoodInfectionController foodInfection;
+        if (ratPoison && (foodInfection = other.GetComponent<FoodInfectionController>()) && !foodInfection.poisonedFood)
         {
-            print("Press x to put rat poison!");
+            UIController.Instance.ChangeUITutorial("Press left-click to poison the food!");
+            if (Input.GetButtonDown("Fire1")){
+                foodInfection.poisonedFood = true;
+                foodInfection.myRenderer.color = Color.green;
+                UIController.Instance.ChangeUITutorial("");
+
+            }
         }
 
         if (other.tag == "Key") {
             keyCount++;
+            UIController.Instance.key.SetActive(true);
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "RatPoison")
+        {
+            ratPoison = true;
+            UIController.Instance.ChangeUITutorialForDuration("Rat poison collected!");
+            UIController.Instance.ratPoison.SetActive(true);
             Destroy(other.gameObject);
         }
     }

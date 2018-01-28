@@ -27,50 +27,53 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2c2400b17a9fbcf448e8b872748af8a7, type: 3}
   - {fileID: 21300000, guid: f0e781b0bdac5f14882e0f130c43d4c5, type: 3}
   unitDeadSprites:
-  - {fileID: 21300000, guid: 8e6aa2ba19b4c924a9d2503cd100c5fe, type: 3}
-  - {fileID: 21300000, guid: b039f5625acd9384c9bf37df9935de47, type: 3}
-  - {fileID: 21300000, guid: 4805dd4af503dc44bb5196e512ea1480, type: 3}
-  - {fileID: 21300000, guid: 7ed742a0a12726643bb48466658d0c5a, type: 3}
-  - {fileID: 21300000, guid: e5678ab9bc5023d45a32b68bca2a2096, type: 3}
-  - {fileID: 21300000, guid: 807d616c837c2e94c89df5ae90d81c21, type: 3}
-  - {fileID: 21300000, guid: 428633b46fa8ab54b808d3c7e894baff, type: 3}
-  - {fileID: 21300000, guid: 09ad9086fe6f91b448f83e58590826ec, type: 3}
-  - {fileID: 21300000, guid: fb5840acd6b5e1b48a68242443467cae, type: 3}
-  - {fileID: 21300000, guid: 0fa61d799b1e6f443a37b0e4c8df57b1, type: 3}
-  - {fileID: 21300000, guid: e89969ec89a43b741832d4d5080187b8, type: 3}
-  - {fileID: 21300000, guid: 8a53e687285d8804b9f923c93c4fab0a, type: 3}
-  - {fileID: 21300000, guid: a9925428e60f1f247a092c267bfca86a, type: 3}
-  - {fileID: 21300000, guid: a02208bbb491d40448aba39090cb448d, type: 3}
+  - {fileID: 21300000, guid: bd22ef2ba79093a47968691dc01489a8, type: 3}
+  - {fileID: 21300000, guid: 71d625102f0f04a4cba9448b62eb8178, type: 3}
+  - {fileID: 21300000, guid: bec12b2e3417e9544bbdb828b90e517f, type: 3}
+  - {fileID: 21300000, guid: 9fdb70ea2583b6141ab716c023cd8b63, type: 3}
+  - {fileID: 21300000, guid: f72ee3af66c131c4c976e659ad498aad, type: 3}
+  - {fileID: 21300000, guid: 152b47a6eb9887c42a74daf89b0b909e, type: 3}
+  - {fileID: 21300000, guid: 81b378197a82f1a45bb5e490a681ca02, type: 3}
+  - {fileID: 21300000, guid: 9cb1ff54f69419945a1807fa4da21eaf, type: 3}
+  - {fileID: 21300000, guid: 59c3665ba19958a47b98e42ebdd4f793, type: 3}
+  - {fileID: 21300000, guid: 4f9c289578e165f43b8ed87a2c48ace2, type: 3}
+  - {fileID: 21300000, guid: 67cf33f124e3b9947aba76ab320c26f9, type: 3}
+  - {fileID: 21300000, guid: 1fd23df198f55a846a29446a81357087, type: 3}
+  - {fileID: 21300000, guid: 9f69bdb8d561e614888d83c359c2281d, type: 3}
+  - {fileID: 21300000, guid: 4dd2d76e81fd85640a870ba1ced52e69, type: 3}
+  - {fileID: 21300000, guid: 392aff053e1d9c84ea5d33541588f6ba, type: 3}
   unitMaskSprites:
-  - {fileID: 21300000, guid: bc6812f203ea88c4c860d4bc716e93a1, type: 3}
-  - {fileID: 21300000, guid: 43e1a48a765ccb94ab45616b8c147744, type: 3}
-  - {fileID: 21300000, guid: 865b22e28c4b0da4a8cca58d2367d825, type: 3}
-  - {fileID: 21300000, guid: ea5df99c963f7ff419fcc7edaeda1e89, type: 3}
-  - {fileID: 21300000, guid: 047447dacad8a9c4f9828576cb680f8c, type: 3}
-  - {fileID: 21300000, guid: 7c63186fac9b5d3488f7de99433ebdc0, type: 3}
-  - {fileID: 21300000, guid: 294d001f6eecaff4887fc57a8ca18a58, type: 3}
-  - {fileID: 21300000, guid: f298d405679aa6d4fb793e2bce6f1ed6, type: 3}
-  - {fileID: 21300000, guid: 851d2825eb1473046acd2ee4c815df7f, type: 3}
-  - {fileID: 21300000, guid: 98b0859dc150c364e8b717d581f7b6a0, type: 3}
-  - {fileID: 21300000, guid: 7ed49c984aa09704eaca11d373584e15, type: 3}
-  - {fileID: 21300000, guid: 3edccd3f49f22e542b0e89be6c33ba00, type: 3}
-  - {fileID: 21300000, guid: 2f863b6b9552a494d8c103ab085cce3c, type: 3}
-  - {fileID: 21300000, guid: 55334c1c5d4bee546a703c7442e64083, type: 3}
+  - {fileID: 21300000, guid: 6d76cd7c41046ea489a3c628ab7df75a, type: 3}
+  - {fileID: 21300000, guid: 0d67f65de1015e54b960e334bade947a, type: 3}
+  - {fileID: 21300000, guid: 8f690e73e8c3aac4bb02c7e8b2165e11, type: 3}
+  - {fileID: 21300000, guid: caec770149e3c4b478854417fb8134b9, type: 3}
+  - {fileID: 21300000, guid: 77a73cbf19bfdbf4f91d5dc96a915f1d, type: 3}
+  - {fileID: 21300000, guid: 8b8401d0a356b924aa08216e28b76084, type: 3}
+  - {fileID: 21300000, guid: 248fcbcfa80677b4293446af39b01520, type: 3}
+  - {fileID: 21300000, guid: c714b2ac2c6b2f143819a1334bbf9299, type: 3}
+  - {fileID: 21300000, guid: ad7d2f06d332e2248bc3b71a94fe0490, type: 3}
+  - {fileID: 21300000, guid: 35d064adf2e3d774fb472cd44b5d9b0d, type: 3}
+  - {fileID: 21300000, guid: 86aeeed127c528a43a7b36177878e05e, type: 3}
+  - {fileID: 21300000, guid: 636a00051bd27c34b8ca9790fc5a79ab, type: 3}
+  - {fileID: 21300000, guid: 976c5cece6d8a6f4e8c0044ada1609b1, type: 3}
+  - {fileID: 21300000, guid: f843442f450d07b4680338066fc14ad4, type: 3}
+  - {fileID: 21300000, guid: 863e9949e3afb1e42bb3e50db4ddfcc1, type: 3}
   unitGasMaskSprites:
-  - {fileID: 21300000, guid: b838a8953615cfe4096f6be477d9d8b4, type: 3}
-  - {fileID: 21300000, guid: d013de237d03c9f41bf1ec62e56c9caa, type: 3}
-  - {fileID: 21300000, guid: 73ac497403beb5a4883392c6b7b57dca, type: 3}
-  - {fileID: 21300000, guid: b799f078afd368049973de555867993f, type: 3}
-  - {fileID: 21300000, guid: c3a4a323da4fc2540b8dcb257589f3d8, type: 3}
-  - {fileID: 21300000, guid: 1310680c91f03024d83e0cb8c11da724, type: 3}
-  - {fileID: 21300000, guid: 6c2918e30a1e0c545a359d7d4ab7b96d, type: 3}
-  - {fileID: 21300000, guid: 5a4d1b8fafae81a42b92ca3ec866c4d5, type: 3}
-  - {fileID: 21300000, guid: 1901b819076245b499f43de1a76a5268, type: 3}
-  - {fileID: 21300000, guid: 4ccd7d88e96887042a052935fac90e08, type: 3}
-  - {fileID: 21300000, guid: 8c162e2d81ea1464d8767cca58a579fc, type: 3}
-  - {fileID: 21300000, guid: 185b39a18ae736b4f991bda86e07f760, type: 3}
-  - {fileID: 21300000, guid: dc3991998a973f147b990aeed29f8552, type: 3}
-  - {fileID: 21300000, guid: 3a2bbf0ea754f1041a42dd6fa93c3c94, type: 3}
+  - {fileID: 21300000, guid: 5c5bbe146e980ea4c8e11d3248ad3587, type: 3}
+  - {fileID: 21300000, guid: d44958722c2403545bd990b24a4b40cc, type: 3}
+  - {fileID: 21300000, guid: b2676018d98c16a4fbfd87bce6f34a75, type: 3}
+  - {fileID: 21300000, guid: d4604afaf6d4e6d48aeb90a439582c5a, type: 3}
+  - {fileID: 21300000, guid: 1f1d5c99f8ea45b44a150fc9422f9e69, type: 3}
+  - {fileID: 21300000, guid: 811f80b68969fb149be110f6d86f2d43, type: 3}
+  - {fileID: 21300000, guid: 522b29c5be8b9394aba355ce7c3aa73a, type: 3}
+  - {fileID: 21300000, guid: e0547e4f9575afc4cbb9f67060bab662, type: 3}
+  - {fileID: 21300000, guid: b76a480e199de674da61d7c5ebab9b6a, type: 3}
+  - {fileID: 21300000, guid: 1876bc4390f264c48b013d4748ba455c, type: 3}
+  - {fileID: 21300000, guid: 5cf0cdb0e13a32e4b9a414c8963651c1, type: 3}
+  - {fileID: 21300000, guid: 3e7b54eb28699844e98d12f83dc051cd, type: 3}
+  - {fileID: 21300000, guid: eda99726978a9ac46bd9c8afd44e00c8, type: 3}
+  - {fileID: 21300000, guid: ec7139d4b56b35843a53109281d58619, type: 3}
+  - {fileID: 21300000, guid: 82f07bc9de8e66a408831bcb98810240, type: 3}
   carringThing:
     unitSpritesB:
     - {fileID: 21300000, guid: 69b3bc47240ac4d41b9632b4fa0d5bcc, type: 3}

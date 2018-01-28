@@ -127,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.1}
-    oldSize: {x: 3.1875, y: 7.0625}
+    oldSize: {x: 3.125, y: 7.0625}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03c15edf8d8f9e49be2512ecba173fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myEnemy: {fileID: 0}
 --- !u!114 &114633538843441668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 10
   intervalTime: 1
-  usePathSmooting: 0
+  usePathSmooting: 1
   showPathSmoothing: 0
 --- !u!114 &114916689850497270
 MonoBehaviour:
@@ -187,11 +188,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitDataBase: {fileID: 11400000, guid: b0e92fd5dd1c86c43b1ec55924197972, type: 2}
   infected: 0
+  myInfection: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 10
   infectingLayer: {fileID: 1868196991391882}
+  sprite: 0
+  unitType: 0
 --- !u!212 &212026113757054642
 SpriteRenderer:
   m_ObjectHideFlags: 1

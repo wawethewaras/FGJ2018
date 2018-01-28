@@ -323,6 +323,10 @@ Prefab:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1991817848671868, guid: b20f9420d33e27c48b0b943e5468bd15, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b20f9420d33e27c48b0b943e5468bd15, type: 2}
   m_IsPrefabParent: 0

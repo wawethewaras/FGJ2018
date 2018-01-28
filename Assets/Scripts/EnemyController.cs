@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour {
 
     IEnumerator moving;
 
-    void Update () {
+    public virtual void Update () {
         switch (currentState) {
             case States.Idle:
                 break;
@@ -67,6 +67,7 @@ public class EnemyController : MonoBehaviour {
                 break;
             case States.Dead:
                 if (!isDead) {
+                    GameController.CorpseCount++;
                     myRenderer.sprite = unitDataBase.unitDeadSprites[sprite];
                     myCountPath.StopMovement();
                     GameController.Instance.deadEnemies.Add(new DeadEnemy(this));
@@ -125,6 +126,15 @@ public class EnemyController : MonoBehaviour {
                 StartCoroutine(Die());
                 myRenderer.color = Color.green;
                 infectingLayer.SetActive(true);
+            }
+            if (unitType == UnitType.Gas)
+            {
+                infected = true;
+                infectedCount++;
+                myInfection = infection;
+                UnitInfected();
+                StartCoroutine(Die());
+                myRenderer.color = Color.green;
             }
         }
 

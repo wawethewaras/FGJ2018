@@ -41,16 +41,16 @@ public class CountPath : MonoBehaviour, pathfinding.Pathfinding
 
         //Basic raycast if can move directly to end target
 
-        bool cantSeeTarget = Physics2D.Linecast(_seeker.transform.position, _endPos, grid.unwalkableMask);
-        if (cantSeeTarget == false)
-        {
-            Vector2[] newPath = new Vector2[1];
-            newPath[0] = _endPos;
-            OnPathFound(newPath);
+        //bool cantSeeTarget = Physics2D.Linecast(_seeker.transform.position, _endPos, grid.unwalkableMask);
+        //if (cantSeeTarget == false)
+        //{
+        //    Vector2[] newPath = new Vector2[1];
+        //    newPath[0] = _endPos;
+        //    OnPathFound(newPath);
 
-            StartCoroutine(PathCountDelay());
-            return;
-        }
+        //    StartCoroutine(PathCountDelay());
+        //    return;
+        //}
 
         if (_endPos != endPosition) {
             endPosition = _endPos;

@@ -29,8 +29,11 @@ public class DoorController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         InventoryController player;
-        if ((player = other.GetComponent<InventoryController>())&& player.keyCount > 0) {
+        if (locked && (player = other.GetComponent<InventoryController>()) && player.keyCount > 0) {
             player.keyCount--;
+            if (player.keyCount <= 0) {
+                UIController.Instance.key.SetActive(false);
+            }
             OpenDoor();
         }
     }
