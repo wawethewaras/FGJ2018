@@ -42,8 +42,8 @@ public class ShowerController : MonoBehaviour
     {
         if (!SinksDisabled && other.GetComponent<PlayerController>())
         {
-            UIController.Instance.ChangeUITutorial("Press left-click to destroy sinks!");
-            if (Input.GetButtonDown("Fire1"))
+            UIController.Instance.ChangeUITutorial("Press space to destroy sinks!");
+            if (Input.GetButtonDown("Jump"))
             {
                 DisableSinks();
                 SinksDisabled = true;

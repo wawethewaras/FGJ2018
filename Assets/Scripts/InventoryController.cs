@@ -18,8 +18,8 @@ public class InventoryController : MonoBehaviour {
         FoodInfectionController foodInfection;
         if (ratPoison && (foodInfection = other.GetComponent<FoodInfectionController>()) && !foodInfection.poisonedFood)
         {
-            UIController.Instance.ChangeUITutorial("Press left-click to poison the food!");
-            if (Input.GetButtonDown("Fire1")){
+            UIController.Instance.ChangeUITutorial("Press space to poison the food!");
+            if (Input.GetButtonDown("Jump")){
                 foodInfection.poisonedFood = true;
                 foodInfection.myRenderer.color = Color.green;
                 UIController.Instance.ChangeUITutorial("");
