@@ -62,13 +62,16 @@ two_persons() {
   done
 }
 
-simple_sprite "faucet"
+
 simple_sprite "alien"
 simple_sprite "doctor"
 simple_sprite "cough"
 simple_sprite "door"
 simple_sprite "opendoor"
 simple_sprite "key"
+simple_sprite "ratpoison"
+simple_sprite "faucet"
+simple_sprite "shower"
 simple_sprite "table"
 simple_sprite "dish0"
 simple_sprite "dish1"
