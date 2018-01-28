@@ -62,7 +62,9 @@ two_persons() {
   done
 }
 
-
+simple_sprite "grass"
+simple_sprite "tile"
+simple_sprite "wall"
 simple_sprite "alien"
 simple_sprite "doctor"
 simple_sprite "cough"
