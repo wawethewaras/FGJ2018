@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 61621139237340934}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692307503554988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.7, y: 46.22, z: -1.324702}
-  m_LocalScale: {x: 1.495347, y: 6.2173586, z: 1}
+  m_LocalPosition: {x: -114.32, y: -9.548, z: 0}
+  m_LocalScale: {x: 14.832105, y: 0.18299417, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -60,14 +60,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 4.6875, y: 9.125}
     newSize: {x: 3.1875, y: 6.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 4.6875, y: 9.125}
   m_EdgeRadius: 0
 --- !u!61 &61836328822483298
 BoxCollider2D:
@@ -81,18 +81,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021778107, y: 0.08605915}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 4.6875, y: 9.125}
     newSize: {x: 3.1875, y: 6.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.520884, y: 3.0246663}
+  m_Size: {x: 4.5, y: 9}
   m_EdgeRadius: 0
 --- !u!95 &95744781261036124
 Animator:
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 045c714b1b0634a40985311069dbb89a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: acdd2a685f0b54c4faac563e78733dc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
