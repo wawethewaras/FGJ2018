@@ -8,6 +8,8 @@ TagManager:
   - Healthy
   - Key
   - Food
+  - RatPoison
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour {
     public bool infected;
     public Infection myInfection;
 
-    private bool isDead = false;
+    protected bool isDead = false;
     protected SpriteRenderer myRenderer;
     protected Rigidbody2D myRigidbody;
     protected CountPath myCountPath;
@@ -72,6 +72,7 @@ public class EnemyController : MonoBehaviour {
                     myCountPath.StopMovement();
                     GameController.Instance.deadEnemies.Add(new DeadEnemy(this));
                     isDead = true;
+                    
                 }
 
                 break;
@@ -175,7 +176,10 @@ public class EnemyController : MonoBehaviour {
     public IEnumerator Die() {
         yield return new WaitForSeconds(5f);
         if (infected) {
-            StopCoroutine(moving);
+            if (moving != null) {
+                StopCoroutine(moving);
+
+            }
             currentState = States.Dead;
         }
     }

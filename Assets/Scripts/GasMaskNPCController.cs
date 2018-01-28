@@ -8,7 +8,9 @@ public class GasMaskNPCController : EnemyController
     private enum GasStates {
         LookingforCorpse,
         CarringCorpse,
-        Eat
+        Eat,
+        Dead
+
     }
     private GasStates currentGasState;
     private EnemyController currentEnemy;
@@ -31,7 +33,15 @@ public class GasMaskNPCController : EnemyController
                 {
                     myCountPath.FindPath(transform, currentEnemy.transform.position);
                 }
-
+                if (isDead)
+                {
+                    GameController.CorpseCount++;
+                    myRenderer.sprite = unitDataBase.unitDeadSprites[sprite];
+                    myCountPath.StopMovement();
+                    GameController.Instance.deadEnemies.Add(new DeadEnemy(this));
+                    isDead = true;
+                    currentGasState = GasStates.Dead;
+                }
                 break;
             case GasStates.CarringCorpse:
                 if (bodyDropOff == null)
@@ -51,6 +61,9 @@ public class GasMaskNPCController : EnemyController
                 {
                     currentGasState = GasStates.LookingforCorpse;
                 }
+                break;
+            case GasStates.Dead:
+
                 break;
         }
 	}

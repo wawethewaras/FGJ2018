@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 10
   intervalTime: 1
-  usePathSmooting: 0
+  usePathSmooting: 1
   showPathSmoothing: 0
 --- !u!212 &212643618260628488
 SpriteRenderer:
