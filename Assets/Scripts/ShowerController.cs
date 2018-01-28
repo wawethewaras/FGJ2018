@@ -24,6 +24,7 @@ public class ShowerController : MonoBehaviour
     {
         foreach (SinkController sink in sinks)
         {
+            sink.WaterParticles.SetActive(false);
             sink.activated = false;
         }
     }
@@ -32,6 +33,7 @@ public class ShowerController : MonoBehaviour
     {
         foreach (SinkController sink in sinks)
         {
+            sink.WaterParticles.SetActive(true);
             sink.activated = true;
         }
     }

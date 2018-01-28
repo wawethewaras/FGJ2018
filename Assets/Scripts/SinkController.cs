@@ -6,6 +6,8 @@ public class SinkController : MonoBehaviour {
 
     public bool activated = true;
 
+    public GameObject WaterParticles;
+
     void OnTriggerStay2D(Collider2D other)
     {
         EnemyController enemy;

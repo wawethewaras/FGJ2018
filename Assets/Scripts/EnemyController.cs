@@ -119,7 +119,7 @@ public class EnemyController : MonoBehaviour {
             }
         }
         if (infection.infectionID == 1) {
-            if (unitType == UnitType.Mask) {
+            if (unitType == UnitType.Mask || unitType == UnitType.Standard) {
                 infected = true;
                 infectedCount++;
                 myInfection = infection;
