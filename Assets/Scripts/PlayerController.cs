@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D myRigidbody;
     public Animator myAnimator;
+    public AudioSource myAudioSource;
 
     [SerializeField]
     private float moveSpeed = 10;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAbilityController = GetComponent<AbilityController>();
         myAnimator = GetComponent<Animator>();
+        myAudioSource = GetComponent<AudioSource>();
 
     }
 

@@ -8,10 +8,12 @@ public class InventoryController : MonoBehaviour {
     public bool ratPoison;
     public int keyCount;
 
-
+    private AudioSource player;
+    public AudioClip soundOnPickUp;
     void Start () {
-		
-	}
+        player = GetComponent<AudioSource>();
+
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -28,12 +30,15 @@ public class InventoryController : MonoBehaviour {
         }
 
         if (other.tag == "Key") {
+            player.PlayOneShot(soundOnPickUp);
+
             keyCount++;
             UIController.Instance.key.SetActive(true);
             Destroy(other.gameObject);
         }
         if (other.tag == "RatPoison")
         {
+            player.PlayOneShot(soundOnPickUp);
             ratPoison = true;
             UIController.Instance.ChangeUITutorialForDuration("Rat poison collected!");
             UIController.Instance.ratPoison.SetActive(true);

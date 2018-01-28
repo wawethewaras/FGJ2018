@@ -7,9 +7,12 @@ public class DoorController : MonoBehaviour {
     public bool locked = false;
 
     private Animator myAnimator;
-
-	void Start () {
+    private AudioSource mySource;
+    public AudioClip doorOpenSound;
+    void Start () {
         myAnimator = GetComponent<Animator>();
+        mySource = GetComponent<AudioSource>();
+
         CloseDoor();
     }
 
@@ -18,7 +21,7 @@ public class DoorController : MonoBehaviour {
         locked = false;
         myAnimator.SetBool("Locked", false);
         GetComponent<SpriteRenderer>().enabled = false;
-
+        mySource.PlayOneShot(doorOpenSound);
     }
     public void CloseDoor()
     {

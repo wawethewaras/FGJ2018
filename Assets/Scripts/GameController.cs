@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
     public List<GameObject> bodyDropOff = new List<GameObject>();
     public List<GameObject> foods = new List<GameObject>();
 
-
+    private bool doorOpen = false;
     public GameObject theCleaners;
 
     public DoorController door;
@@ -27,9 +27,10 @@ public class GameController : MonoBehaviour {
 
     public void YardInfected() {
 
-        if (EnemyController.infectedCount >= fieldInfectd) {
+        if (!doorOpen && EnemyController.infectedCount >= fieldInfectd) {
             door.OpenDoor();
             theCleaners.SetActive(true);
+            doorOpen = true;
         }
     }
 

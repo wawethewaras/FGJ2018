@@ -7,7 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Infection/Flu")]
 public class Flu : Infection {
     public ProjectileController coughParticle;
-
+    public AudioClip sneezeSound;
     public override void OnEnable() {
         infectionID = 0;
     }
@@ -16,5 +16,8 @@ public class Flu : Infection {
         Rigidbody2D cough = Instantiate(coughParticle, player.transform.position, player.transform.rotation).GetComponent<Rigidbody2D>();
         Vector2 direction = new Vector2(player.myAnimator.GetFloat("input_x"), player.myAnimator.GetFloat("input_y"));
         cough.velocity = direction * coughParticle.speed;
+        player.myAudioSource.PlayOneShot(sneezeSound);
+
+
     }
 }
